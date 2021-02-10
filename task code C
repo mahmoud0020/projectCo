@@ -16,7 +16,7 @@ char list4[20];//this is part of memory
 //--- read input from user and select function that user want ----//
 int main()
 {
-
+ 
     int poriority[80]={0};
     int size=0;
     int i;
@@ -120,7 +120,7 @@ int main()
     else{
         printf("wrong choice");
     }
-
+ 
 }
 ////////////////////////////////////////////////////////////
 // ---this function is search request by binary search---//
@@ -163,7 +163,7 @@ int SearchRequest(char request,char list1[],char list2[],char list3[],char list4
 //////////////////////////////////////////////////////////
 void quickSortChar(char a[], int left, int right){
     int j;
-
+ 
     if (left < right)
     {
         j = partition(a, left, right);
@@ -175,7 +175,7 @@ int partition(char a[], int left, int right){
     int pivot, i, j, t;
     pivot = a[left];
     i = left; j = right + 1;
-
+ 
     int temp_location;
     while (1)
     {
@@ -226,7 +226,7 @@ int binarySearch(char arr[], char x,int n){
 /////////////////////////////////////////////////////
 void delete_request(int poriority[]){
     int port;
-
+ 
     printf("Enter priority to Delete all request : ");
     scanf("%d",&port);
     //delete from list one
@@ -236,7 +236,7 @@ void delete_request(int poriority[]){
             printf("the request name [%c] has deleted from list[1] in location: %d\n",list1[i],i);
             list1[i]='\0';
             poriority[i]=0;
-
+ 
         }
     }
     //delete from list two
@@ -282,7 +282,7 @@ void process_request(int poriority[],int port){
             }
     }
     //print list two
-
+ 
     for(int i=0;i<20;i++)
     {
         if(poriority[i+20]==port)
@@ -348,8 +348,11 @@ void SearchPriority(char request,int poriority[]){
     }else{
     printf("not found priority for request !");
     }
-
+ 
 }
-
+ 
+ 
+ 
+ 
 
 
