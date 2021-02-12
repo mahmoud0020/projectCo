@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-int location[20]={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
+int location[20]={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
 int locationPoriorty[80];
 int binarySearch(char arr[], char x,int n);
 void quickSortChar(char a[], int left, int right);
@@ -12,13 +12,12 @@ char list1[20];//this is part of memory
 char list2[20];//this is part of memory
 char list3[20];//this is part of memory
 char list4[20];//this is part of memory
-// ----------this is main function --------- //
-//--- read input from user and select function that user want ----//
 int main()
 {
 
     int poriority[80]={0};
     int size=0;
+    int s=1;
     int i;
     int numReq;
     printf("how many request you want to input ? ");
@@ -69,13 +68,14 @@ int main()
         }
         size++;
     }
-    printf("|---------------------The Main Functionalities -----------------------|\n");
+    printf("|-----------------------The Main Functionalities --------------------------|\n");
     printf("1- search for Request \n");
     printf("2- search for Request Priority \n");
     printf("3- search for Request and Priority \n");
     printf("4- Delete all Request with specific Priority \n");
     printf("5- Process all requests with specific priority \n");
     printf("6- Empty all lists \n");
+    while(s==1){
     printf("Enter your choice :");
     int choice;
     scanf("%d",&choice);
@@ -120,7 +120,9 @@ int main()
     else{
         printf("wrong choice");
     }
-
+    printf("do you want 1-do another operation 2-exit\n");
+    scanf("%d",&s);
+    }
 }
 ////////////////////////////////////////////////////////////
 // ---this function is search request by binary search---//
@@ -163,7 +165,6 @@ int SearchRequest(char request,char list1[],char list2[],char list3[],char list4
 //////////////////////////////////////////////////////////
 void quickSortChar(char a[], int left, int right){
     int j;
-
     if (left < right)
     {
         j = partition(a, left, right);
